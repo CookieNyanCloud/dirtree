@@ -91,13 +91,10 @@ func dirTree(out *os.File, path string, printFiles bool) error {
 			sort.Strings(names)
 			sort.Sort(sort.Reverse(sort.StringSlice(names)))
 			for i, filename := range names {
-				//fmt.Println(names,filename)
 				if strings.Contains(filename, ".git") || strings.Contains(filename, ".idea") {
 					continue
 				}
 				var lastPref, pref string
-				//fmt.Println(names,filename)
-				//if i == len(names)-1 {
 				if i == 0 {
 					lastPref = "└───"
 				} else {
